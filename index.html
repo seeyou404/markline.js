@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>marklinejs</title>
   <style type="text/css">
     body{
@@ -46,33 +48,36 @@
   cvs.width = window.innerWidth;
   cvs.height= window.innerHeight;
 
-  var mkLine = markLine("canvas","markLine-bg",1920,1080);
+  var imgScale = cvs.width / 1920;
+  var imgHeight = 1200;
+
+  var mkLine = markLine("canvas","markLine-bg",cvs.width,imgHeight * imgScale);
   var option = [
   {
-    from: {x: 791,y: 114},
-    to: {x:1041, y:364},
+    from: {x: 791 * imgScale,y: 114 * imgScale},
+    to: {x:1041 * imgScale, y:364 * imgScale},
     info: ['This is markline~']
   },
     {
-      from: {x: 791,y: 114},
-      to: {x:1041, y:364},
+      from: {x: 791 * imgScale,y: 114 * imgScale},
+      to: {x:1041 * imgScale, y:364 * imgScale},
       style: '#fff',
       info: ['This is markline~']
     },
     {
-      from: {x: 1041,y: 364,name:""},
-      to: {x:791, y:114,name:""},
+      from: {x: 1041 * imgScale,y: 364 * imgScale},
+      to: {x:791 * imgScale, y:114 * imgScale},
       info: ['This is markline~']
     },
     {
-      from: {x: 1041,y: 114},
-      to: {x:791, y:364},
+      from: {x: 1041 * imgScale,y: 114 * imgScale},
+      to: {x:791 * imgScale, y:364 * imgScale},
       style: '#fff',
       info: ['This is markline~']
     },
     {
-      from: {x: 791,y: 364},
-      to: {x:1041, y:114},
+      from: {x: 791 * imgScale,y: 364 * imgScale},
+      to: {x:1041 * imgScale, y:114 * imgScale},
       style: '#fff',
       info: ['This is markline~']
     },
@@ -81,23 +86,23 @@
   mkLine.paint();
 
   var data= [{
-    x: 791,
-    y: 114,
+    x: 791 * imgScale,
+    y: 114 * imgScale,
     style: "#fff",
     info: ['This is markPoint~']
   },{
-    x: 1041,
-    y: 114,
+    x: 1041 * imgScale,
+    y: 114 * imgScale,
     style: "#fff",
     info: ['This is markPoint~']
   },{
-    x: 1041,
-    y: 364,
+    x: 1041 * imgScale,
+    y: 364 * imgScale,
     style: "#fff",
     info: ['This is markPoint~']
   },{
-    x: 791,
-    y: 364,
+    x: 791 * imgScale,
+    y: 364 * imgScale,
     style: "#fff",
     info: ['This is markPoint~']
   }];
